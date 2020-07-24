@@ -2,18 +2,20 @@ sudo: required
 services:
   - docker
 before -install:
-  - docker build -t dingyj3178/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t ishimosi/react-test -f ./client/Dockerfile.dev ./client
 script:
-  - docker run dingyj3178/react-test npm test -- --coverage
+  - docker run ishimosi/react-test npm test -- --coverage
 after_sucess:
-  - docker build -t dingyj3178/multi-client ./client
-  - docker build -t dingyj3178/multi-nginx ./nginx
-  - docker build -t dingyj3178/multi-server ./server
-  - docker build -t dingyj3178/multi-worker ./worker
+  - docker build -t ishimosi/multi-client ./client
+  - docker build -t ishimosi/multi-nginx ./nginx
+  - docker build -t ishimosi/multi-server ./server
+  - docker build -t ishimosi/multi-worker ./worker
   # log in docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # take images and push them to docker hub
-  - docker push dingyj3178/multi-client
-  - docker push dingyj3178/multi-nginx
-  - docker push dingyj3178/multi-server
-  - docker push dingyj3178/multi-worker
+  - docker push ishimosi/multi-client
+  - docker push ishimosi/multi-nginx
+  - docker push ishimosi/multi-server
+  - docker push ishimosi/multi-worker
+
+
