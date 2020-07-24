@@ -17,3 +17,6 @@ after_sucess:
   - docker push ishimosi/multi-nginx
   - docker push ishimosi/multi-server
   - docker push ishimosi/multi-worker
+
+
+
