@@ -45,5 +45,5 @@ services:
       - /app/node_modules
       - ./worker/app
     environment:
-      - REDIS_HOST=redis
+      - REDIS_HOST=multi-docker-redis.6nhdiy.ng.0001.apne1.cache.amazonaws.com
       - REDIS_PORT=6379
